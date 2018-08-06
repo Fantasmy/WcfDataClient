@@ -28,12 +28,91 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.txtBoxNameAdd = new System.Windows.Forms.TextBox();
+            this.txtBoxSurnameAdd = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnSaveAdd = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // txtBoxNameAdd
+            // 
+            this.txtBoxNameAdd.Location = new System.Drawing.Point(307, 149);
+            this.txtBoxNameAdd.Name = "txtBoxNameAdd";
+            this.txtBoxNameAdd.Size = new System.Drawing.Size(201, 26);
+            this.txtBoxNameAdd.TabIndex = 0;
+            // 
+            // txtBoxSurnameAdd
+            // 
+            this.txtBoxSurnameAdd.Location = new System.Drawing.Point(307, 231);
+            this.txtBoxSurnameAdd.Name = "txtBoxSurnameAdd";
+            this.txtBoxSurnameAdd.Size = new System.Drawing.Size(201, 26);
+            this.txtBoxSurnameAdd.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(208, 154);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(51, 20);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Name";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(212, 236);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(74, 20);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Surname";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Palatino Linotype", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(322, 67);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(148, 38);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Add Form";
+            // 
+            // btnSaveAdd
+            // 
+            this.btnSaveAdd.Location = new System.Drawing.Point(531, 297);
+            this.btnSaveAdd.Name = "btnSaveAdd";
+            this.btnSaveAdd.Size = new System.Drawing.Size(75, 29);
+            this.btnSaveAdd.TabIndex = 6;
+            this.btnSaveAdd.Text = "Save";
+            this.btnSaveAdd.UseVisualStyleBackColor = true;
+            this.btnSaveAdd.Click += new System.EventHandler(this.btnSaveAdd_Click);
+            // 
+            // frmAddAlumno
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnSaveAdd);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtBoxSurnameAdd);
+            this.Controls.Add(this.txtBoxNameAdd);
+            this.Name = "frmAddAlumno";
             this.Text = "frmAddAlumno";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.TextBox txtBoxNameAdd;
+        private System.Windows.Forms.TextBox txtBoxSurnameAdd;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnSaveAdd;
     }
 }

@@ -32,6 +32,7 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnHttp = new System.Windows.Forms.Button();
             this.btnTcp = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlumno)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,9 +47,9 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(150, 346);
+            this.btnAdd.Location = new System.Drawing.Point(142, 333);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.Size = new System.Drawing.Size(75, 34);
             this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -56,9 +57,9 @@
             // 
             // btnHttp
             // 
-            this.btnHttp.Location = new System.Drawing.Point(285, 346);
+            this.btnHttp.Location = new System.Drawing.Point(277, 333);
             this.btnHttp.Name = "btnHttp";
-            this.btnHttp.Size = new System.Drawing.Size(75, 23);
+            this.btnHttp.Size = new System.Drawing.Size(75, 34);
             this.btnHttp.TabIndex = 2;
             this.btnHttp.Text = "Http";
             this.btnHttp.UseVisualStyleBackColor = true;
@@ -66,19 +67,30 @@
             // 
             // btnTcp
             // 
-            this.btnTcp.Location = new System.Drawing.Point(426, 346);
+            this.btnTcp.Location = new System.Drawing.Point(418, 333);
             this.btnTcp.Name = "btnTcp";
-            this.btnTcp.Size = new System.Drawing.Size(75, 23);
+            this.btnTcp.Size = new System.Drawing.Size(75, 34);
             this.btnTcp.TabIndex = 3;
             this.btnTcp.Text = "Tcp";
             this.btnTcp.UseVisualStyleBackColor = true;
             this.btnTcp.Click += new System.EventHandler(this.btnTcp_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(563, 333);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(75, 34);
+            this.btnUpdate.TabIndex = 4;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnTcp);
             this.Controls.Add(this.btnHttp);
             this.Controls.Add(this.btnAdd);
@@ -97,6 +109,7 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnHttp;
         private System.Windows.Forms.Button btnTcp;
+        private System.Windows.Forms.Button btnUpdate;
     }
 }
 

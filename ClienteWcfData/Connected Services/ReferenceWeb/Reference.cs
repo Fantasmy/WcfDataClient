@@ -83,6 +83,30 @@ namespace ClienteWcfData.ReferenceWeb {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAll", ReplyAction="http://tempuri.org/IService1/GetAllResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<ClienteWcfData.ReferenceWeb.Alumno>> GetAllAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Add", ReplyAction="http://tempuri.org/IService1/AddResponse")]
+        ClienteWcfData.ReferenceWeb.Alumno Add(ClienteWcfData.ReferenceWeb.Alumno alumno);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Add", ReplyAction="http://tempuri.org/IService1/AddResponse")]
+        System.Threading.Tasks.Task<ClienteWcfData.ReferenceWeb.Alumno> AddAsync(ClienteWcfData.ReferenceWeb.Alumno alumno);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetBySurname", ReplyAction="http://tempuri.org/IService1/GetBySurnameResponse")]
+        ClienteWcfData.ReferenceWeb.Alumno GetBySurname(string surname);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetBySurname", ReplyAction="http://tempuri.org/IService1/GetBySurnameResponse")]
+        System.Threading.Tasks.Task<ClienteWcfData.ReferenceWeb.Alumno> GetBySurnameAsync(string surname);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Delete", ReplyAction="http://tempuri.org/IService1/DeleteResponse")]
+        bool Delete(string surname);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Delete", ReplyAction="http://tempuri.org/IService1/DeleteResponse")]
+        System.Threading.Tasks.Task<bool> DeleteAsync(string surname);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Update", ReplyAction="http://tempuri.org/IService1/UpdateResponse")]
+        ClienteWcfData.ReferenceWeb.Alumno Update(ClienteWcfData.ReferenceWeb.Alumno alumno);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Update", ReplyAction="http://tempuri.org/IService1/UpdateResponse")]
+        System.Threading.Tasks.Task<ClienteWcfData.ReferenceWeb.Alumno> UpdateAsync(ClienteWcfData.ReferenceWeb.Alumno alumno);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -118,6 +142,38 @@ namespace ClienteWcfData.ReferenceWeb {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<ClienteWcfData.ReferenceWeb.Alumno>> GetAllAsync() {
             return base.Channel.GetAllAsync();
+        }
+        
+        public ClienteWcfData.ReferenceWeb.Alumno Add(ClienteWcfData.ReferenceWeb.Alumno alumno) {
+            return base.Channel.Add(alumno);
+        }
+        
+        public System.Threading.Tasks.Task<ClienteWcfData.ReferenceWeb.Alumno> AddAsync(ClienteWcfData.ReferenceWeb.Alumno alumno) {
+            return base.Channel.AddAsync(alumno);
+        }
+        
+        public ClienteWcfData.ReferenceWeb.Alumno GetBySurname(string surname) {
+            return base.Channel.GetBySurname(surname);
+        }
+        
+        public System.Threading.Tasks.Task<ClienteWcfData.ReferenceWeb.Alumno> GetBySurnameAsync(string surname) {
+            return base.Channel.GetBySurnameAsync(surname);
+        }
+        
+        public bool Delete(string surname) {
+            return base.Channel.Delete(surname);
+        }
+        
+        public System.Threading.Tasks.Task<bool> DeleteAsync(string surname) {
+            return base.Channel.DeleteAsync(surname);
+        }
+        
+        public ClienteWcfData.ReferenceWeb.Alumno Update(ClienteWcfData.ReferenceWeb.Alumno alumno) {
+            return base.Channel.Update(alumno);
+        }
+        
+        public System.Threading.Tasks.Task<ClienteWcfData.ReferenceWeb.Alumno> UpdateAsync(ClienteWcfData.ReferenceWeb.Alumno alumno) {
+            return base.Channel.UpdateAsync(alumno);
         }
     }
 }
