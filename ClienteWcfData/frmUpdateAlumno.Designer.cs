@@ -86,6 +86,7 @@
             this.btnSaveUpdate.TabIndex = 5;
             this.btnSaveUpdate.Text = "Save";
             this.btnSaveUpdate.UseVisualStyleBackColor = true;
+            this.btnSaveUpdate.Click += new System.EventHandler(this.btnSaveUpdate_Click);
             // 
             // frmUpdateAlumno
             // 

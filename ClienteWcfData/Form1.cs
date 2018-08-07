@@ -21,13 +21,13 @@ namespace ClienteWcfData
         private void Form1_Load(object sender, EventArgs e)
         {
             FrmAdd = new frmAddAlumno();
-            FrmAdd.AlumnoAdded += new EventHandler(this.btnTcp_Click);
+            FrmAdd.AlumnoAdded += new EventHandler(this.btnTcp_Click); //btnTcp = refreshTCP
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             //frmAddAlumno frmAdd = new frmAddAlumno();
-            FrmAdd.Show();
+            FrmAdd.ShowDialog();
         }
 
         private void btnHttp_Click(object sender, EventArgs e)

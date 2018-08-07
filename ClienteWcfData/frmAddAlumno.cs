@@ -22,19 +22,16 @@ namespace ClienteWcfData
 
         private void btnSaveAdd_Click(object sender, EventArgs e)
         {
-            // aqui va el codigo que envia el alumno a wcf
-
             Alumno alumno = new Alumno();
             alumno.Nombre = txtBoxNameAdd.Text;
             alumno.Apellidos = txtBoxSurnameAdd.Text;
-            Service1Client svc = new Service1Client("TCP");
+            ReferenceWeb.Service1Client svc = 
+                new ReferenceWeb.Service1Client("Tcp");
             svc.Add(alumno);
-            AlumnoAdded(this, e); // cual es el objeto que lanza el evento. se podria pasar un e.AlumnoAdded, así no tendriamos que vovler a ir al servicio para agregar los datos (tendrias que agregar un alumno en el grid)
-            Close();
-            //if (AlumnoAdded !=null) // mirar que no es null, para ver que el evento apunta a algo, sino no se ejecuta
-            //{
-            //    AlumnoAdded(this, e);
-            //}
-         }
+            if (AlumnoAdded != null) // mirar que no es null, para ver que el evento apunta a algo, sino no se ejecuta
+            {
+                AlumnoAdded(this, e); // cual es el objeto que lanza el evento. se podria pasar un e.AlumnoAdded, así no tendriamos que vovler a ir al servicio para agregar los datos (tendrias que agregar un alumno en el grid)
+            }
+        }
     }
 }
