@@ -34,6 +34,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnSaveAdd = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtBoxEmailAdd = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtBoxNameAdd
@@ -45,7 +47,7 @@
             // 
             // txtBoxSurnameAdd
             // 
-            this.txtBoxSurnameAdd.Location = new System.Drawing.Point(307, 231);
+            this.txtBoxSurnameAdd.Location = new System.Drawing.Point(307, 195);
             this.txtBoxSurnameAdd.Name = "txtBoxSurnameAdd";
             this.txtBoxSurnameAdd.Size = new System.Drawing.Size(201, 26);
             this.txtBoxSurnameAdd.TabIndex = 1;
@@ -62,7 +64,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(212, 236);
+            this.label2.Location = new System.Drawing.Point(208, 201);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(74, 20);
             this.label2.TabIndex = 3;
@@ -88,11 +90,29 @@
             this.btnSaveAdd.UseVisualStyleBackColor = true;
             this.btnSaveAdd.Click += new System.EventHandler(this.btnSaveAdd_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(208, 250);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(46, 20);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "email";
+            // 
+            // txtBoxEmailAdd
+            // 
+            this.txtBoxEmailAdd.Location = new System.Drawing.Point(307, 244);
+            this.txtBoxEmailAdd.Name = "txtBoxEmailAdd";
+            this.txtBoxEmailAdd.Size = new System.Drawing.Size(201, 26);
+            this.txtBoxEmailAdd.TabIndex = 7;
+            // 
             // frmAddAlumno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtBoxEmailAdd);
             this.Controls.Add(this.btnSaveAdd);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
@@ -114,5 +134,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnSaveAdd;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtBoxEmailAdd;
     }
 }

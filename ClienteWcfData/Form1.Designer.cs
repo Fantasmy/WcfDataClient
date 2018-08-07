@@ -33,6 +33,8 @@
             this.btnHttp = new System.Windows.Forms.Button();
             this.btnTcp = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtBoxId = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlumno)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,7 +49,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(142, 333);
+            this.btnAdd.Location = new System.Drawing.Point(209, 329);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 34);
             this.btnAdd.TabIndex = 1;
@@ -57,7 +59,7 @@
             // 
             // btnHttp
             // 
-            this.btnHttp.Location = new System.Drawing.Point(277, 333);
+            this.btnHttp.Location = new System.Drawing.Point(344, 329);
             this.btnHttp.Name = "btnHttp";
             this.btnHttp.Size = new System.Drawing.Size(75, 34);
             this.btnHttp.TabIndex = 2;
@@ -67,7 +69,7 @@
             // 
             // btnTcp
             // 
-            this.btnTcp.Location = new System.Drawing.Point(418, 333);
+            this.btnTcp.Location = new System.Drawing.Point(485, 329);
             this.btnTcp.Name = "btnTcp";
             this.btnTcp.Size = new System.Drawing.Size(75, 34);
             this.btnTcp.TabIndex = 3;
@@ -77,7 +79,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(563, 333);
+            this.btnUpdate.Location = new System.Drawing.Point(585, 387);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 34);
             this.btnUpdate.TabIndex = 4;
@@ -85,11 +87,29 @@
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(125, 398);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(27, 20);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Id:";
+            // 
+            // txtBoxId
+            // 
+            this.txtBoxId.Location = new System.Drawing.Point(172, 395);
+            this.txtBoxId.Name = "txtBoxId";
+            this.txtBoxId.Size = new System.Drawing.Size(388, 26);
+            this.txtBoxId.TabIndex = 6;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtBoxId);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnTcp);
             this.Controls.Add(this.btnHttp);
@@ -100,6 +120,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlumno)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -110,6 +131,8 @@
         private System.Windows.Forms.Button btnHttp;
         private System.Windows.Forms.Button btnTcp;
         private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtBoxId;
     }
 }
 

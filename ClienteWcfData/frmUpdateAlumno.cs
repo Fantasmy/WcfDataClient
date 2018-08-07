@@ -14,12 +14,13 @@ namespace ClienteWcfData
     public partial class frmUpdateAlumno : Form
     {
         public event EventHandler OnEdit;
-        public frmUpdateAlumno( string nombre, string apellidos)
+        public frmUpdateAlumno( string nombre, string apellidos, string email)
         {
             InitializeComponent();
 
             txtBoxNameUpdate.Text = nombre;
             txtBoxNameUpdate.Text = apellidos;
+            txtBoxEmailUpdate.Text = email;
 
         }
 
@@ -27,11 +28,11 @@ namespace ClienteWcfData
         {
             ReferenceWeb.Service1Client svc = new ReferenceWeb.Service1Client("Tcp");
 
-            Alumno alumnoNew = new Alumno { Nombre = txtBoxNameUpdate.Text, Apellidos = txtBoxSurnameUpdate.Text };
+            Students newStudent = new Students { name = txtBoxNameUpdate.Text, surname = txtBoxSurnameUpdate.Text, email = txtBoxEmailUpdate.Text };
 
-            Alumno alumnoUpdate = svc.Put(alumnoNew);
+            Students updatedStudent = svc.Put(Guid.Parse(txtBoxId.Text), newStudent);
 
-            if (alumnoUpdate != null && OnEdit != null)
+            if (updatedStudent != null && OnEdit != null)
             {
                 OnEdit(this, e);
             }

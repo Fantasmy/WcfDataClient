@@ -90,7 +90,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="Connected Services\ReferenceWeb\ClienteWcfData.ReferenceWeb.Alumno.datasource">
+    <None Include="Connected Services\ReferenceWeb\ClienteWcfData.ReferenceWeb.Students.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ReferenceWeb\service.wsdl" />
@@ -100,7 +100,7 @@
     <None Include="Connected Services\ReferenceWeb\service1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ReferenceWeb\WcfData.xsd">
+    <None Include="Connected Services\ReferenceWeb\WcfData.Model.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\Settings.settings">

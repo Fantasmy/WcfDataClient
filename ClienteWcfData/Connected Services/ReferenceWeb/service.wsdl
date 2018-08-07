@@ -33,7 +33,7 @@
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import namespace="http://tempuri.org/" />
       <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import namespace="http://schemas.datacontract.org/2004/07/WcfData" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/WcfData.Model" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IService1_GetAll_InputMessage">
@@ -42,20 +42,50 @@
   <wsdl:message name="IService1_GetAll_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetAllResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_Add_InputMessage">
-    <wsdl:part name="parameters" element="tns:Add" />
+  <wsdl:message name="IService1_GetById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetById" />
   </wsdl:message>
-  <wsdl:message name="IService1_Add_OutputMessage">
-    <wsdl:part name="parameters" element="tns:AddResponse" />
+  <wsdl:message name="IService1_GetById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Post_InputMessage">
+    <wsdl:part name="parameters" element="tns:Post" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Post_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PostResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Put_InputMessage">
+    <wsdl:part name="parameters" element="tns:Put" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Put_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PutResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Delete_InputMessage">
+    <wsdl:part name="parameters" element="tns:Delete" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Delete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteResponse" />
   </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="GetAll">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAll" message="tns:IService1_GetAll_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAllResponse" message="tns:IService1_GetAll_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="Add">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Add" message="tns:IService1_Add_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddResponse" message="tns:IService1_Add_OutputMessage" />
+    <wsdl:operation name="GetById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetById" message="tns:IService1_GetById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetByIdResponse" message="tns:IService1_GetById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Post">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Post" message="tns:IService1_Post_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/PostResponse" message="tns:IService1_Post_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Put">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Put" message="tns:IService1_Put_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/PutResponse" message="tns:IService1_Put_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Delete" message="tns:IService1_Delete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DeleteResponse" message="tns:IService1_Delete_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="Http" type="tns:IService1">
@@ -69,8 +99,35 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Add">
-      <soap:operation soapAction="http://tempuri.org/IService1/Add" style="document" />
+    <wsdl:operation name="GetById">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Post">
+      <soap:operation soapAction="http://tempuri.org/IService1/Post" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Put">
+      <soap:operation soapAction="http://tempuri.org/IService1/Put" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <soap:operation soapAction="http://tempuri.org/IService1/Delete" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -91,8 +148,35 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Add">
-      <soap12:operation soapAction="http://tempuri.org/IService1/Add" style="document" />
+    <wsdl:operation name="GetById">
+      <soap12:operation soapAction="http://tempuri.org/IService1/GetById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Post">
+      <soap12:operation soapAction="http://tempuri.org/IService1/Post" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Put">
+      <soap12:operation soapAction="http://tempuri.org/IService1/Put" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <soap12:operation soapAction="http://tempuri.org/IService1/Delete" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

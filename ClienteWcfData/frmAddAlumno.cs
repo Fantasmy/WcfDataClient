@@ -13,7 +13,7 @@ namespace ClienteWcfData
 {
     public partial class frmAddAlumno : Form
     {
-        public event EventHandler AlumnoAdded; //delegate. El evento es de frmAddAlumno
+        public event EventHandler addedStudent; //delegate. El evento es de frmAddAlumno
 
         public frmAddAlumno()
         {
@@ -22,15 +22,16 @@ namespace ClienteWcfData
 
         private void btnSaveAdd_Click(object sender, EventArgs e)
         {
-            Alumno alumno = new Alumno();
-            alumno.Nombre = txtBoxNameAdd.Text;
-            alumno.Apellidos = txtBoxSurnameAdd.Text;
+            Students student = new Students();
+            student.name = txtBoxNameAdd.Text;
+            student.surname = txtBoxSurnameAdd.Text;
+            student.email = txtBoxEmailAdd.Text;
             ReferenceWeb.Service1Client svc = 
                 new ReferenceWeb.Service1Client("Tcp");
-            svc.Add(alumno);
-            if (AlumnoAdded != null) // mirar que no es null, para ver que el evento apunta a algo, sino no se ejecuta
+            svc.Post(student);
+            if (addedStudent != null) // mirar que no es null, para ver que el evento apunta a algo, sino no se ejecuta
             {
-                AlumnoAdded(this, e); // cual es el objeto que lanza el evento. se podria pasar un e.AlumnoAdded, así no tendriamos que vovler a ir al servicio para agregar los datos (tendrias que agregar un alumno en el grid)
+                addedStudent(this, e); // cual es el objeto que lanza el evento. se podria pasar un e.AlumnoAdded, así no tendriamos que vovler a ir al servicio para agregar los datos (tendrias que agregar un alumno en el grid)
             }
         }
     }

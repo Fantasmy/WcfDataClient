@@ -15,18 +15,24 @@ namespace ClienteWcfData.ReferenceWeb {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Alumno", Namespace="http://schemas.datacontract.org/2004/07/WcfData")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Students", Namespace="http://schemas.datacontract.org/2004/07/WcfData.Model")]
     [System.SerializableAttribute()]
-    public partial class Alumno : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class Students : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ApellidosField;
+        private string emailField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NombreField;
+        private System.Guid idField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string nameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string surnameField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -39,27 +45,53 @@ namespace ClienteWcfData.ReferenceWeb {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Apellidos {
+        public string email {
             get {
-                return this.ApellidosField;
+                return this.emailField;
             }
             set {
-                if ((object.ReferenceEquals(this.ApellidosField, value) != true)) {
-                    this.ApellidosField = value;
-                    this.RaisePropertyChanged("Apellidos");
+                if ((object.ReferenceEquals(this.emailField, value) != true)) {
+                    this.emailField = value;
+                    this.RaisePropertyChanged("email");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Nombre {
+        public System.Guid id {
             get {
-                return this.NombreField;
+                return this.idField;
             }
             set {
-                if ((object.ReferenceEquals(this.NombreField, value) != true)) {
-                    this.NombreField = value;
-                    this.RaisePropertyChanged("Nombre");
+                if ((this.idField.Equals(value) != true)) {
+                    this.idField = value;
+                    this.RaisePropertyChanged("id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string name {
+            get {
+                return this.nameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.nameField, value) != true)) {
+                    this.nameField = value;
+                    this.RaisePropertyChanged("name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string surname {
+            get {
+                return this.surnameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.surnameField, value) != true)) {
+                    this.surnameField = value;
+                    this.RaisePropertyChanged("surname");
                 }
             }
         }
@@ -79,16 +111,34 @@ namespace ClienteWcfData.ReferenceWeb {
     public interface IService1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAll", ReplyAction="http://tempuri.org/IService1/GetAllResponse")]
-        System.Collections.Generic.List<ClienteWcfData.ReferenceWeb.Alumno> GetAll();
+        System.Collections.Generic.List<ClienteWcfData.ReferenceWeb.Students> GetAll();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAll", ReplyAction="http://tempuri.org/IService1/GetAllResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<ClienteWcfData.ReferenceWeb.Alumno>> GetAllAsync();
+        System.Threading.Tasks.Task<System.Collections.Generic.List<ClienteWcfData.ReferenceWeb.Students>> GetAllAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Add", ReplyAction="http://tempuri.org/IService1/AddResponse")]
-        void Add(ClienteWcfData.ReferenceWeb.Alumno alumno);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetById", ReplyAction="http://tempuri.org/IService1/GetByIdResponse")]
+        ClienteWcfData.ReferenceWeb.Students GetById(System.Guid id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Add", ReplyAction="http://tempuri.org/IService1/AddResponse")]
-        System.Threading.Tasks.Task AddAsync(ClienteWcfData.ReferenceWeb.Alumno alumno);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetById", ReplyAction="http://tempuri.org/IService1/GetByIdResponse")]
+        System.Threading.Tasks.Task<ClienteWcfData.ReferenceWeb.Students> GetByIdAsync(System.Guid id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Post", ReplyAction="http://tempuri.org/IService1/PostResponse")]
+        ClienteWcfData.ReferenceWeb.Students Post(ClienteWcfData.ReferenceWeb.Students student);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Post", ReplyAction="http://tempuri.org/IService1/PostResponse")]
+        System.Threading.Tasks.Task<ClienteWcfData.ReferenceWeb.Students> PostAsync(ClienteWcfData.ReferenceWeb.Students student);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Put", ReplyAction="http://tempuri.org/IService1/PutResponse")]
+        ClienteWcfData.ReferenceWeb.Students Put(System.Guid guid, ClienteWcfData.ReferenceWeb.Students student);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Put", ReplyAction="http://tempuri.org/IService1/PutResponse")]
+        System.Threading.Tasks.Task<ClienteWcfData.ReferenceWeb.Students> PutAsync(System.Guid guid, ClienteWcfData.ReferenceWeb.Students student);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Delete", ReplyAction="http://tempuri.org/IService1/DeleteResponse")]
+        bool Delete(System.Guid guid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Delete", ReplyAction="http://tempuri.org/IService1/DeleteResponse")]
+        System.Threading.Tasks.Task<bool> DeleteAsync(System.Guid guid);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -118,20 +168,44 @@ namespace ClienteWcfData.ReferenceWeb {
                 base(binding, remoteAddress) {
         }
         
-        public System.Collections.Generic.List<ClienteWcfData.ReferenceWeb.Alumno> GetAll() {
+        public System.Collections.Generic.List<ClienteWcfData.ReferenceWeb.Students> GetAll() {
             return base.Channel.GetAll();
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<ClienteWcfData.ReferenceWeb.Alumno>> GetAllAsync() {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<ClienteWcfData.ReferenceWeb.Students>> GetAllAsync() {
             return base.Channel.GetAllAsync();
         }
         
-        public void Add(ClienteWcfData.ReferenceWeb.Alumno alumno) {
-            base.Channel.Add(alumno);
+        public ClienteWcfData.ReferenceWeb.Students GetById(System.Guid id) {
+            return base.Channel.GetById(id);
         }
         
-        public System.Threading.Tasks.Task AddAsync(ClienteWcfData.ReferenceWeb.Alumno alumno) {
-            return base.Channel.AddAsync(alumno);
+        public System.Threading.Tasks.Task<ClienteWcfData.ReferenceWeb.Students> GetByIdAsync(System.Guid id) {
+            return base.Channel.GetByIdAsync(id);
+        }
+        
+        public ClienteWcfData.ReferenceWeb.Students Post(ClienteWcfData.ReferenceWeb.Students student) {
+            return base.Channel.Post(student);
+        }
+        
+        public System.Threading.Tasks.Task<ClienteWcfData.ReferenceWeb.Students> PostAsync(ClienteWcfData.ReferenceWeb.Students student) {
+            return base.Channel.PostAsync(student);
+        }
+        
+        public ClienteWcfData.ReferenceWeb.Students Put(System.Guid guid, ClienteWcfData.ReferenceWeb.Students student) {
+            return base.Channel.Put(guid, student);
+        }
+        
+        public System.Threading.Tasks.Task<ClienteWcfData.ReferenceWeb.Students> PutAsync(System.Guid guid, ClienteWcfData.ReferenceWeb.Students student) {
+            return base.Channel.PutAsync(guid, student);
+        }
+        
+        public bool Delete(System.Guid guid) {
+            return base.Channel.Delete(guid);
+        }
+        
+        public System.Threading.Tasks.Task<bool> DeleteAsync(System.Guid guid) {
+            return base.Channel.DeleteAsync(guid);
         }
     }
 }
